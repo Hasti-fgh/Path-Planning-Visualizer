@@ -52,7 +52,7 @@ def plot_comparison(results, suptitle, save_path):
 
     plt.tight_layout()
     plt.savefig(save_path, dpi=150, bbox_inches='tight')
-    print(f"✅ Saved to {save_path}")
+    print(f"Saved to {save_path}")
     plt.show()
 
 def animate(grid, explored, path, title='Path Planning'):
