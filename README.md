@@ -1,6 +1,6 @@
 # Path Planning Visualizer
 
-A visual comparison of four pathfinding algorithms — A*, BFS, Dijkstra, and Greedy Best-First Search — navigating a maze inspired by the **Hampton Court Palace Maze** in Surrey, UK. Hampton Court's hedge maze is one of the oldest and most famous labyrinths in England, known for its winding dead ends and deceptive corridors that have been confusing visitors since the 1690s.
+A visual comparison of four pathfinding algorithms A*, BFS, Dijkstra, and Greedy Best-First Search navigating a maze inspired by the **Hampton Court Palace Maze** in Surrey, UK. Hampton Court's hedge maze is one of the oldest and most famous labyrinths in England, known for its winding dead ends and deceptive corridors that have been confusing visitors since the 1690s.
 
 ![Algorithm Comparison](demo/algorithm_comparison.png)
 
@@ -8,9 +8,9 @@ A visual comparison of four pathfinding algorithms — A*, BFS, Dijkstra, and Gr
 
 | Algorithm | Strategy | Finds Shortest Path? | Notes |
 |-----------|----------|----------------------|-------|
-| **A\*** | Heuristic-guided (Manhattan distance) | Yes | Balances speed and optimality |
-| **BFS** | Level-by-level exploration | Yes | Guarantees shortest path, explores broadly |
-| **Dijkstra** | Lowest-cost first | Yes | Equivalent to BFS on uniform-cost grids |
+| **A\*** | Heuristic Guided (Manhattan distance) | Yes | Balances speed and optimality |
+| **BFS** | Level by Level exploration | Yes | Guarantees shortest path, explores broadly |
+| **Dijkstra** | Lowest cost first | Yes | Equivalent to BFS on uniform cost grids |
 | **Greedy** | Always moves toward goal | No | Fastest to explore, but can miss shorter paths |
 
 ## Results on Hampton Court Maze
@@ -31,7 +31,7 @@ Greedy explores the fewest cells by always heading toward the goal, but ends up 
 ├── src/
 │   ├── grid.py          # Grid creation, neighbors, path reconstruction
 │   ├── algorithms.py    # A*, BFS, Dijkstra, Greedy implementations
-│   └── visualizer.py    # Side-by-side plot + animation support
+│   └── visualizer.py    # Side by side plot + animation support
 ├── demo/
 │   └── algorithm_comparison.png
 └── requirements.txt
