@@ -1,5 +1,5 @@
 from src.grid import create_grid, set_start, set_end, add_wall
-from src.algorithms import astar, bfs, dijkstra
+from src.algorithms import astar, bfs, dijkstra, greedy
 from src.visualizer import plot_comparison
 
 
@@ -76,10 +76,16 @@ if __name__ == '__main__':
     e3, p3 = dijkstra(g3, (1, 1), (28, 28))
     print(f"Dijkstra: {len(p3)} steps | {len(e3)} cells explored")
 
+    print("Running Greedy...")
+    g4 = build_hampton()
+    e4, p4 = greedy(g4, (1, 1), (28, 28))
+    print(f"Greedy:   {len(p4)} steps | {len(e4)} cells explored")
+
     results = [
         (g1, e1, p1, f"A*\nPath: {len(p1)} steps | Explored: {len(e1)} cells"),
         (g2, e2, p2, f"BFS\nPath: {len(p2)} steps | Explored: {len(e2)} cells"),
         (g3, e3, p3, f"Dijkstra\nPath: {len(p3)} steps | Explored: {len(e3)} cells"),
+        (g4, e4, p4, f"Greedy\nPath: {len(p4)} steps | Explored: {len(e4)} cells"),
     ]
     plot_comparison(results, "Hampton Court Palace Maze — Algorithm Comparison",
                     "demo/algorithm_comparison.png")

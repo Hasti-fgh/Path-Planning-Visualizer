@@ -71,3 +71,23 @@ def astar(grid, start, end):
                 heapq.heappush(heap, (f, neighbor))
 
     return explored, None
+
+
+def greedy(grid, start, end):
+    heap = [(heuristic(start, end), start)]
+    came_from = {start: None}
+    explored = []
+
+    while heap:
+        _, current = heapq.heappop(heap)
+        explored.append(current)
+
+        if current == end:
+            return explored, reconstruct_path(came_from, start, end)
+
+        for neighbor in get_neighbors(grid, current):
+            if neighbor not in came_from:
+                came_from[neighbor] = current
+                heapq.heappush(heap, (heuristic(neighbor, end), neighbor))
+
+    return explored, None
